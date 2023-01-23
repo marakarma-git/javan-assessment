@@ -6,8 +6,26 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 </head>
 <body>
   <app-root></app-root>
+
+
+  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script>
+      new Chartist.Line('#traffic-chart', {
+          labels: ['January', 'Februrary', 'March', 'April', 'May', 'June'],
+          series: [
+              [23000, 25000, 19000, 34000, 56000, 64000]
+          ]
+          }, {
+          low: 0,
+          showArea: true
+      });
+  </script>
 </body>
 </html>
