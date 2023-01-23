@@ -1,1 +1,71 @@
-<p>user-create works!</p>
+
+<section>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb d-flex justify-content-end">
+        <li class="breadcrumb-item"><a href="/employee/index">User</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create</li>
+    </ol>
+  </nav>
+
+
+
+  <h1 class="h2">Users</h1>
+
+
+  <div class="row my-4">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="col-lg-8">
+        <div class="card shadow">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="col-form-label">Fullname</label>
+              <input type="text" class="form-control"formControlName="fullname" >
+              <div *ngIf="f['fullname'].touched && f['fullname'].invalid" class="alert alert-danger">
+                <div *ngIf="f['fullname'].errors && f['fullname'].errors['required']">Fullname is required.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Username</label>
+              <input type="text" class="form-control"formControlName="username" >
+              <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+                <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Mobile</label>
+              <input type="text" class="form-control"formControlName="mobile" >
+              <div *ngIf="f['mobile'].touched && f['mobile'].invalid" class="alert alert-danger">
+                <div *ngIf="f['mobile'].errors && f['mobile'].errors['required']">Mobile is required.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Email</label>
+              <input type="email" class="form-control"formControlName="email" >
+              <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">email is required.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Password</label>
+              <input type="password" class="form-control"formControlName="password" >
+              <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-5">
+              <button type="submit" class="btn btn-primary mr-2">Submit</button>
+              <button type="reset" class="btn btn-secondary mr-2">Reset</button>
+              <button class="btn btn-danger" routerLink="/user/index">Cancel</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</section>
+
